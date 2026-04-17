@@ -6,7 +6,7 @@ import {
   Plus, Trash2, Save, Send, Code, 
   HelpCircle, Type, Clock, Trophy, 
   ChevronRight, Upload, FileSpreadsheet,
-  CheckCircle2
+  CheckCircle2, Settings
 } from 'lucide-react'
 import { useStore, Question, QuestionType, Exam } from '@/lib/store'
 import { useRouter } from 'next/navigation'
