@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+:root {
+  --background: #08080a;
+  --foreground: #ffffff;
+  --accent-blue: #0062ff;
+  --accent-cyan: #00d6ff;
+  --zinc-deep: #121214;
+  --zinc-light: #1c1c1f;
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-blue: var(--accent-blue);
+  --color-zinc-deep: var(--zinc-deep);
+  --color-zinc-light: var(--zinc-light);
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Syncopate", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Structural Components */
+.section-wrapper {
+  max-width: 1200px;
+  padding: 6rem 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .section-wrapper {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-wrapper {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+.heading-h1 {
+  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: white;
+  text-align: center;
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .heading-h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-h1 {
+    font-size: 4.5rem;
+  }
+}
+
+.heading-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+}
+
+@media (min-width: 768px) {
+  .heading-h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.body-text {
+  color: #a1a1aa;
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .body-text {
+    font-size: 1.125rem;
+  }
+}
+
+.body-text-small {
+  color: #71717a;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+/* Premium UI Elements */
+.glass-card {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 40px;
+  padding: 3rem;
+  transition: all 0.5s;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 80px rgba(0, 98, 255, 0.08);
+  border-color: rgba(0, 98, 255, 0.3);
+}
+
+.spotlight-glow {
+  background: radial-gradient(circle at center, var(--accent-blue) 0%, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom right, white, white, rgba(255, 255, 255, 0.4));
+}
+
+.pill-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+/* Primary Button (Apple Blue) */
+.btn-primary {
+  background: linear-gradient(135deg, #0062ff 0%, #004ecc 100%);
+  padding: 1.25rem 3rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  transition: all 0.3rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 98, 255, 0.1), 0 10px 10px -5px rgba(0, 98, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Secondary Button (Outline) */
+.btn-secondary {
+  padding: 1.25rem 3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d4d4d8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(40px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--zinc-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #004ecc 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.glass-morphism {
+  background: rgba(8, 8, 10, 0.8);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
